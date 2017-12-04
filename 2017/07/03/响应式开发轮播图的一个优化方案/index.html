@@ -3,18 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hexo</title>
+  <title>响应式开发轮播图的一个优化方案 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="–title: hexo搭建个人博客date: 2017-06-28 01:12:29tags:   分享categories:  ajax##JSONP的跨域原理  实践：a.ajax中将dataType设置为”jsonp” jsonp实现跨域的原理：1-$.ajax 解决跨域时 将dataType设置为 jsonp">
+  <meta name="description" content="##移动端响应式开发关于轮播图的一个优化方案需求是pc端和移动端准备了两套不同尺寸的图片，在不同的终端，显示不同的图片。常见的解决方案就是： ###第一种：直接在item放置两个标签，通过bootstrap的hidden-sm来控制显示响应大图还是小图，缺点就是不管pc端还是移动端都会请求两个图片，增加了请求和降低的速">
+<meta name="keywords" content="学习,随笔,心情">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/2017/11/27/JSONP的跨域原理/index.html">
+<meta property="og:title" content="响应式开发轮播图的一个优化方案">
+<meta property="og:url" content="http://yoursite.com/2017/07/03/响应式开发轮播图的一个优化方案/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="–title: hexo搭建个人博客date: 2017-06-28 01:12:29tags:   分享categories:  ajax##JSONP的跨域原理  实践：a.ajax中将dataType设置为”jsonp” jsonp实现跨域的原理：1-$.ajax 解决跨域时 将dataType设置为 jsonp即可跨域 为哈？ 重要前提：ajax 不能进行跨域请求，浏览器限制的 在跨域的情">
-<meta property="og:updated_time" content="2017-11-27T09:40:58.120Z">
+<meta property="og:description" content="##移动端响应式开发关于轮播图的一个优化方案需求是pc端和移动端准备了两套不同尺寸的图片，在不同的终端，显示不同的图片。常见的解决方案就是： ###第一种：直接在item放置两个标签，通过bootstrap的hidden-sm来控制显示响应大图还是小图，缺点就是不管pc端还是移动端都会请求两个图片，增加了请求和降低的速度。解决方式用js控制：—》 ###优化思路一:$(window).on(“re">
+<meta property="og:updated_time" content="2017-12-01T15:00:00.295Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="–title: hexo搭建个人博客date: 2017-06-28 01:12:29tags:   分享categories:  ajax##JSONP的跨域原理  实践：a.ajax中将dataType设置为”jsonp” jsonp实现跨域的原理：1-$.ajax 解决跨域时 将dataType设置为 jsonp即可跨域 为哈？ 重要前提：ajax 不能进行跨域请求，浏览器限制的 在跨域的情">
+<meta name="twitter:title" content="响应式开发轮播图的一个优化方案">
+<meta name="twitter:description" content="##移动端响应式开发关于轮播图的一个优化方案需求是pc端和移动端准备了两套不同尺寸的图片，在不同的终端，显示不同的图片。常见的解决方案就是： ###第一种：直接在item放置两个标签，通过bootstrap的hidden-sm来控制显示响应大图还是小图，缺点就是不管pc端还是移动端都会请求两个图片，增加了请求和降低的速度。解决方式用js控制：—》 ###优化思路一:$(window).on(“re">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -63,73 +64,65 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-JSONP的跨域原理" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-响应式开发轮播图的一个优化方案" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/11/27/JSONP的跨域原理/" class="article-date">
-  <time datetime="2017-11-27T09:39:08.208Z" itemprop="datePublished">2017-11-27</time>
+    <a href="/2017/07/03/响应式开发轮播图的一个优化方案/" class="article-date">
+  <time datetime="2017-07-02T17:12:29.000Z" itemprop="datePublished">2017-07-03</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/项目问题及优化/">项目问题及优化</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      响应式开发轮播图的一个优化方案
+    </h1>
+  
+
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <p>–<br>title: hexo搭建个人博客<br>date: 2017-06-28 01:12:29<br>tags: </p>
-<ul>
-<li>分享<br>categories: </li>
-<li><h2 id="ajax"><a href="#ajax" class="headerlink" title="ajax"></a>ajax</h2>##JSONP的跨域原理</li>
-</ul>
-<p>实践：a.ajax中将dataType设置为”jsonp”<br> jsonp实现跨域的原理：<br>1-$.ajax 解决跨域时 将dataType设置为 jsonp即可跨域 为哈？</p>
-<p>重要前提：ajax 不能进行跨域请求，浏览器限制的</p>
-<p>在跨域的情况下，XMLHttpRequest对象 是不能进行跨域请求的</p>
-<p>在跨域的情况下（将dataType设置为 jsonp 时），$.ajax方法并没有使用XMLHttpRequest对象 请求服务器</p>
-<p>而是使用了其他的方式来代替的；</p>
-<p>如何实现：</p>
-<p>原理：</p>
-<p>jsonp本质上是利用了script标签src属性具备跨域的能力；</p>
-<p>1-客户端要定义好一个函数，通过script标签将函数名传递后台</p>
-<p>2-后台获取函数名，将数据 以函数参数的形式 拼接到函数中</p>
-<p>3-拼接完成后，后台返回 字符串形式的函数调用</p>
-<p>4-浏览器接受到函数调用后，立即执行函数 即可实现功能</p>
-<p>需要前后台互相配合完成；</p>
-<p>*/</p>
-<p>//前端有方法 ，但是缺数据，后台有的就是数据</p>
-<p>//形象的比喻就是前端有枪，但没子弹</p>
-<p>function say(obj){</p>
-<p>alert(‘hello ‘+obj.name);</p>
-<p>}</p>
-<p>下面就是利用script 标签src属性 具备跨域请求资源的能力 ，与后台交互</p>
-<!-- 跨域可以请求图片 -->
-<!-- <img src="http://study.com/test/lz.png"; > -->
-<!-- 跨域能请求js文件 -->
-<!-- <script src="http://study.com/test/test.js"></script>; -->
-<!-- src能跨域请求后台处理程序(php) 并可以返回数据 -->
-<!-- <script src="http://study.com/test/test.php"></script>; -->
-<!-- 能实现前端传递数据给后台，后台在返回数据吗 -->
-<!-- <script src="http://study.com/test/test1.php?name=zs"></script>; -->
-<!-- 服务器返回都是say() 会被浏览器当做 js代码执行 -->
-<script src="http://study.com/test/test1.php?callback=say"></script>
-
-
-
+        <p>##移动端响应式开发关于轮播图的一个优化方案<br>需求是pc端和移动端准备了两套不同尺寸的图片，在不同的终端，显示不同的图片。<br>常见的解决方案就是：</p>
+<p>###第一种：直接在item放置两个标签，通过bootstrap的hidden-sm来控制显示响应大图还是小图，缺点就是不管pc端还是移动端都会请求两个图片，增加了请求和降低的速度。<br>解决方式用js控制：—》</p>
+<p>###优化思路一:$(window).on(“resize”,function(){<br>}).trigger(“resize”);</p>
+<p>该想法就是将图片的数据存放在数组里，通过注册resize事件，在不同终端显示不同的图片，这个做法确实减少了请求，<br>但是问题是后期维护的时候，图片可能要经常的变动，这样后期还要对数据进行维护，存在不方便的地方。</p>
+<p>###针对优化一，提出优化思路二：将两种尺寸的图片名放入item的标签上，用两个自定属性data-pc-img,data-mobile-img存放图片的数据，<br>在js中就使用data(“”)，获取对应的尺寸的图片，这样既减少了请求的次数，也降低了维护的复杂度。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/27/JSONP的跨域原理/" data-id="cjai07wkl0000skulseck6c5b" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/07/03/响应式开发轮播图的一个优化方案/" data-id="cjas5gkvo0000ggulcs30cpqb" class="article-share-link">Partager</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习/">学习</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/心情/">心情</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+
     </footer>
   </div>
   
     
 <nav id="article-nav">
   
+    <a href="/2017/11/27/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          Hello World
+        
+      </div>
+    </a>
   
-    <a href="/2017/11/27/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+  
+    <a href="/2017/06/28/hexo搭建博客/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Ancien</strong>
-      <div class="article-nav-title">Hello World</div>
+      <div class="article-nav-title">hexo搭建个人博客</div>
     </a>
   
 </nav>
