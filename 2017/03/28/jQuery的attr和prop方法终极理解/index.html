@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>jQuey中attr和prop终极理解 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="##jQuery的attr和prop终极解答   12345678910111213141516171819202122232425262728293031323334353637383940开发中我们用jq对对象属性的操作，为避免问题，selected,disabled，checked这样的属性用prop，其他用at">
+<meta name="keywords" content="随笔">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jQuey中attr和prop终极理解">
+<meta property="og:url" content="http://yoursite.com/2017/03/28/jQuery的attr和prop方法终极理解/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="##jQuery的attr和prop终极解答   12345678910111213141516171819202122232425262728293031323334353637383940开发中我们用jq对对象属性的操作，为避免问题，selected,disabled，checked这样的属性用prop，其他用attr,至少我之前一直这样去避免，那么为什么用attr设置这些属性不行呢？究其本质">
+<meta property="og:updated_time" content="2017-12-04T13:35:35.202Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="jQuey中attr和prop终极理解">
+<meta name="twitter:description" content="##jQuery的attr和prop终极解答   12345678910111213141516171819202122232425262728293031323334353637383940开发中我们用jq对对象属性的操作，为避免问题，selected,disabled，checked这样的属性用prop，其他用attr,至少我之前一直这样去避免，那么为什么用attr设置这些属性不行呢？究其本质">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-jQuery的attr和prop方法终极理解" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/03/28/jQuery的attr和prop方法终极理解/" class="article-date">
+  <time datetime="2017-03-28T12:12:29.000Z" itemprop="datePublished">2017-03-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/jQuery/">jQuery</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      jQuey中attr和prop终极理解
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>##jQuery的attr和prop终极解答<br>   <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">开发中我们用jq对对象属性的操作，为避免问题，selected,disabled，checked这样的属性用prop，其他用attr,</span><br><span class="line">至少我之前一直这样去避免，那么为什么用attr设置这些属性不行呢？</span><br><span class="line">究其本质，attr底层使用了原生js的setAttribute和getAttribute，操作的是标签的属性attribute，而不是dom对象的property,在浏览器将html字符串构建dom对象的过程中，会将html的属性也生成dom的属性节点，但是并不能</span><br><span class="line">完全一一对应，比如标签的自定义属性，在dom对象里就没有，另外<span class="class"><span class="keyword">class</span>,<span class="title">selected</span>,<span class="title">disabled</span>,<span class="title">checked</span>,<span class="title">value</span>这些</span></span><br><span class="line">在dom对象中分别对应着className,defaultSelected,defaultDisabled,defaultChecked,defaultValue,所以这里就不难理解attr设置与我们的想象不一样了，比如你想设置checkbox选中，用attr你需要设置成attr("checked","checked"),而用prop是直接操作dom对象的，用的prop('checked',true)</span><br><span class="line">补充：其实这里不管使用attr设置，只要后面的值不是<span class="literal">undefined</span>或者<span class="literal">null</span>,哪怕你设置<span class="number">0</span>，或者空字符串，checkbox都会选中。</span><br><span class="line">最佳实践：option的selected属性，checkbox的checked属性，input框禁用操作建议使用prop,其他属性推荐使用attr,其中自定义属性的取值推荐使用data()方法</span><br><span class="line">以下供理解的代码</span><br><span class="line">###html部分代码</span><br><span class="line">&lt;!--&lt;div id="box" class="hehe" title="哈哈" aa="bb"&gt;&lt;/div&gt;--&gt;</span><br><span class="line">&lt;!--&lt;input type="text" value="11" id="txt"&gt;--&gt;</span><br><span class="line">&lt;!-- &lt;input type="text" id="txt"&gt; --&gt;</span><br><span class="line">&lt;!--标签的checked属性对应了dom对象中defaultChecked属性--&gt;</span><br><span class="line">&lt;!--&lt;input type="checkbox" checked="checked" id="ck"&gt;--&gt;</span><br><span class="line"> ###js部分代码</span><br><span class="line">  // 自定义属性  ：只有标签有   只能用  attr</span><br><span class="line">  // 对于 id title  ：attr和  prop都可以</span><br><span class="line">  // 对于selected checked disabled   prop方法</span><br><span class="line">  // value    val</span><br><span class="line">  var ck = document.getElementById("ck");</span><br><span class="line">  //var box = document.getElementById("box");</span><br><span class="line">  //console.log(box.className);</span><br><span class="line">  //console.log(box.getAttribute("className"));</span><br><span class="line"></span><br><span class="line">  //这三个方法是用直接操作标签属性的</span><br><span class="line">  //getAttribute("")</span><br><span class="line">  //setAttribute("")</span><br><span class="line">  //removeAttribute("")</span><br><span class="line"></span><br><span class="line">  // "一一对应"</span><br><span class="line">  //var box = document.getElementById("box");</span><br><span class="line">  //console.log(box.aa);</span><br><span class="line"></span><br><span class="line">  //input 的 value 对应的是  对象的defaultValue</span><br><span class="line"></span><br><span class="line">  // input框中的值 对应的是 value</span><br><span class="line"></span><br><span class="line">  //var txt = document.getElementById("txt");</span><br><span class="line">  //console.log(txt.id);</span><br><span class="line">  //console.log(txt.value);//对应的是框里面的内容，这个值是用户可以修改的。</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/03/28/jQuery的attr和prop方法终极理解/" data-id="cjas8o92u00001culxa3h22hv" class="article-share-link">Delen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/06/28/hexo搭建博客/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Nieuwer</strong>
+      <div class="article-nav-title">
+        
+          hexo搭建个人博客
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categorieën</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/项目问题及优化/">项目问题及优化</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Labels</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习/">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/心情/">心情</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/学习/" style="font-size: 10px;">学习</a> <a href="/tags/心情/" style="font-size: 10px;">心情</a> <a href="/tags/随笔/" style="font-size: 20px;">随笔</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archieven</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recente berichten</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/11/27/JSONP的跨域原理/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/27/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/03/响应式开发轮播图的一个优化方案/">响应式开发轮播图的一个优化方案</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/28/hexo搭建博客/">hexo搭建个人博客</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/28/jQuery的attr和prop方法终极理解/">jQuey中attr和prop终极理解</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
