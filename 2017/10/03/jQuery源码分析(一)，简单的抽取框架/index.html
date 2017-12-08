@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>jQuery源码分析(一)，简单的抽取框架 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="jQuery源码分析，简单的抽取框架12345678910111213141516171819202122232425262728// 源码分析：1,使用了函数自调用的方式，防止变量污染和防止变量泄露// 2,传入一个window,里面使用使用window的话，只需要找函数的形参的window,// 这样做的好处就是函">
+<meta name="keywords" content="jQuery">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jQuery源码分析(一)，简单的抽取框架">
+<meta property="og:url" content="http://yoursite.com/2017/10/03/jQuery源码分析(一)，简单的抽取框架/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="jQuery源码分析，简单的抽取框架12345678910111213141516171819202122232425262728// 源码分析：1,使用了函数自调用的方式，防止变量污染和防止变量泄露// 2,传入一个window,里面使用使用window的话，只需要找函数的形参的window,// 这样做的好处就是函数内部查找window更加高效，第二点就是更加方便压缩代码// ;(functi">
+<meta property="og:updated_time" content="2017-12-08T12:37:14.154Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="jQuery源码分析(一)，简单的抽取框架">
+<meta name="twitter:description" content="jQuery源码分析，简单的抽取框架12345678910111213141516171819202122232425262728// 源码分析：1,使用了函数自调用的方式，防止变量污染和防止变量泄露// 2,传入一个window,里面使用使用window的话，只需要找函数的形参的window,// 这样做的好处就是函数内部查找window更加高效，第二点就是更加方便压缩代码// ;(functi">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-jQuery源码分析(一)，简单的抽取框架" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/10/03/jQuery源码分析(一)，简单的抽取框架/" class="article-date">
+  <time datetime="2017-10-03T12:21:13.000Z" itemprop="datePublished">2017-10-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/jQuery/">jQuery</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      jQuery源码分析(一)，简单的抽取框架
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="jQuery源码分析，简单的抽取框架"><a href="#jQuery源码分析，简单的抽取框架" class="headerlink" title="jQuery源码分析，简单的抽取框架"></a>jQuery源码分析，简单的抽取框架</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// 源码分析：1,使用了函数自调用的方式，防止变量污染和防止变量泄露</span></span><br><span class="line"><span class="comment">// 2,传入一个window,里面使用使用window的话，只需要找函数的形参的window,</span></span><br><span class="line"><span class="comment">// 这样做的好处就是函数内部查找window更加高效，第二点就是更加方便压缩代码</span></span><br><span class="line"><span class="comment">// </span></span><br><span class="line">;(<span class="function"><span class="keyword">function</span>(<span class="params">window</span>)</span>&#123;</span><br><span class="line">    <span class="comment">// 3,使用了工厂函数，这样做的优点就是批量创建对象，且不要使用new来创建；</span></span><br><span class="line">    <span class="keyword">var</span> jQuery = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> jQuery.fn.init();</span><br><span class="line">        <span class="comment">// 这个才是真正的创建对象的构造函数</span></span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="comment">// 使用给对象的原型对象扩展方法和属性</span></span><br><span class="line">    jQuery.prototype = jQuery.fn = &#123;</span><br><span class="line">        construct:jQuery,</span><br><span class="line"></span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="comment">// 这里的fn是什么/</span></span><br><span class="line">    <span class="comment">// 相当于就是用fn给prototype起了一个别名</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> init = jQuery.fn.init = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    init.prototype = jQuery.fn;</span><br><span class="line">    <span class="comment">// 让init的原型指向fn</span></span><br><span class="line"></span><br><span class="line">   <span class="built_in">window</span>.jQuery = <span class="built_in">window</span>.$ = jQuery;</span><br><span class="line">&#125;)(<span class="built_in">window</span>);</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/10/03/jQuery源码分析(一)，简单的抽取框架/" data-id="cjaxwcmu70000c8ulq9ruky1i" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/11/27/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Hello World
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/07/03/响应式开发轮播图的一个优化方案/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">响应式开发轮播图的一个优化方案</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/移动web/">移动web</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/项目问题及优化/">项目问题及优化</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习/">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/心情/">心情</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/学习/" style="font-size: 20px;">学习</a> <a href="/tags/心情/" style="font-size: 15px;">心情</a> <a href="/tags/随笔/" style="font-size: 20px;">随笔</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/12/08/关于nodejs的npm命令回车后没有执行命令（无反应的）解决方案/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/27/JSONP的跨域原理/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/27/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/03/jQuery源码分析(一)，简单的抽取框架/">jQuery源码分析(一)，简单的抽取框架</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/03/响应式开发轮播图的一个优化方案/">响应式开发轮播图的一个优化方案</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

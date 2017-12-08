@@ -201,6 +201,49 @@
 
 
   
+    <article id="post-jQuery源码分析(一)，简单的抽取框架" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/10/03/jQuery源码分析(一)，简单的抽取框架/" class="article-date">
+  <time datetime="2017-10-03T12:21:13.000Z" itemprop="datePublished">2017-10-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/jQuery/">jQuery</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/03/jQuery源码分析(一)，简单的抽取框架/">jQuery源码分析(一)，简单的抽取框架</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="jQuery源码分析，简单的抽取框架"><a href="#jQuery源码分析，简单的抽取框架" class="headerlink" title="jQuery源码分析，简单的抽取框架"></a>jQuery源码分析，简单的抽取框架</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// 源码分析：1,使用了函数自调用的方式，防止变量污染和防止变量泄露</span></span><br><span class="line"><span class="comment">// 2,传入一个window,里面使用使用window的话，只需要找函数的形参的window,</span></span><br><span class="line"><span class="comment">// 这样做的好处就是函数内部查找window更加高效，第二点就是更加方便压缩代码</span></span><br><span class="line"><span class="comment">// </span></span><br><span class="line">;(<span class="function"><span class="keyword">function</span>(<span class="params">window</span>)</span>&#123;</span><br><span class="line">    <span class="comment">// 3,使用了工厂函数，这样做的优点就是批量创建对象，且不要使用new来创建；</span></span><br><span class="line">    <span class="keyword">var</span> jQuery = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> jQuery.fn.init();</span><br><span class="line">        <span class="comment">// 这个才是真正的创建对象的构造函数</span></span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="comment">// 使用给对象的原型对象扩展方法和属性</span></span><br><span class="line">    jQuery.prototype = jQuery.fn = &#123;</span><br><span class="line">        construct:jQuery,</span><br><span class="line"></span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="comment">// 这里的fn是什么/</span></span><br><span class="line">    <span class="comment">// 相当于就是用fn给prototype起了一个别名</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> init = jQuery.fn.init = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    init.prototype = jQuery.fn;</span><br><span class="line">    <span class="comment">// 让init的原型指向fn</span></span><br><span class="line"></span><br><span class="line">   <span class="built_in">window</span>.jQuery = <span class="built_in">window</span>.$ = jQuery;</span><br><span class="line">&#125;)(<span class="built_in">window</span>);</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/10/03/jQuery源码分析(一)，简单的抽取框架/" data-id="cjaxwcmu70000c8ulq9ruky1i" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-响应式开发轮播图的一个优化方案" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/07/03/响应式开发轮播图的一个优化方案/" class="article-date">
@@ -424,7 +467,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习/">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/心情/">心情</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习/">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/心情/">心情</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
     </div>
   </div>
 
@@ -434,7 +477,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/学习/" style="font-size: 20px;">学习</a> <a href="/tags/心情/" style="font-size: 10px;">心情</a> <a href="/tags/随笔/" style="font-size: 20px;">随笔</a>
+      <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/学习/" style="font-size: 20px;">学习</a> <a href="/tags/心情/" style="font-size: 15px;">心情</a> <a href="/tags/随笔/" style="font-size: 20px;">随笔</a>
     </div>
   </div>
 
@@ -443,7 +486,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li></ul>
     </div>
   </div>
 
@@ -468,11 +511,11 @@
           </li>
         
           <li>
-            <a href="/2017/07/03/响应式开发轮播图的一个优化方案/">响应式开发轮播图的一个优化方案</a>
+            <a href="/2017/10/03/jQuery源码分析(一)，简单的抽取框架/">jQuery源码分析(一)，简单的抽取框架</a>
           </li>
         
           <li>
-            <a href="/2017/06/28/hexo搭建博客/">hexo搭建个人博客</a>
+            <a href="/2017/07/03/响应式开发轮播图的一个优化方案/">响应式开发轮播图的一个优化方案</a>
           </li>
         
       </ul>
