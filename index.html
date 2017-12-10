@@ -48,9 +48,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -82,7 +82,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/08/关于nodejs的npm命令回车后没有执行命令（无反应的）解决方案/" data-id="cjaxuvq220000zculxyep3pub" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/12/08/关于nodejs的npm命令回车后没有执行命令（无反应的）解决方案/" data-id="cjaxuvq220000zculxyep3pub" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -146,7 +146,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/27/JSONP的跨域原理/" data-id="cjai07wkl0000skulseck6c5b" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/27/JSONP的跨域原理/" data-id="cjai07wkl0000skulseck6c5b" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -191,7 +191,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/27/hello-world/" data-id="cjahw4taa00001oulcoodhqdk" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/27/hello-world/" data-id="cjahw4taa00001oulcoodhqdk" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -232,7 +232,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/03/jQuery源码分析(一)，简单的抽取框架/" data-id="cjaxwcmu70000c8ulq9ruky1i" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/10/03/jQuery源码分析(一)，简单的抽取框架/" data-id="cjaxwcmu70000c8ulq9ruky1i" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
@@ -244,14 +244,14 @@
 
 
   
-    <article id="post-响应式开发轮播图的一个优化方案" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-09-动画" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/07/03/响应式开发轮播图的一个优化方案/" class="article-date">
-  <time datetime="2017-07-02T17:12:29.000Z" itemprop="datePublished">2017-07-03</time>
+    <a href="/2017/07/13/09-动画/" class="article-date">
+  <time datetime="2017-07-13T12:45:13.000Z" itemprop="datePublished">2017-07-13</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/项目问题及优化/">项目问题及优化</a>
+    <a class="article-category-link" href="/categories/h5c3/">h5c3</a>
   </div>
 
   </div>
@@ -262,7 +262,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/03/响应式开发轮播图的一个优化方案/">响应式开发轮播图的一个优化方案</a>
+      <a class="article-title" href="/2017/07/13/09-动画/">H5C3--动画</a>
     </h1>
   
 
@@ -270,19 +270,60 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>##移动端响应式开发关于轮播图的一个优化方案<br>需求是pc端和移动端准备了两套不同尺寸的图片，在不同的终端，显示不同的图片。<br>常见的解决方案就是：</p>
-<p>###第一种：直接在item放置两个标签，通过bootstrap的hidden-sm来控制显示响应大图还是小图，缺点就是不管pc端还是移动端都会请求两个图片，增加了请求和降低的速度。<br>解决方式用js控制：—》</p>
-<p>###优化思路一:$(window).on(“resize”,function(){<br>}).trigger(“resize”);</p>
-<p>该想法就是将图片的数据存放在数组里，通过注册resize事件，在不同终端显示不同的图片，这个做法确实减少了请求，<br>但是问题是后期维护的时候，图片可能要经常的变动，这样后期还要对数据进行维护，存在不方便的地方。</p>
-<p>###针对优化一，提出优化思路二：将两种尺寸的图片名放入item的标签上，用两个自定属性data-pc-img,data-mobile-img存放图片的数据，<br>在js中就使用data(“”)，获取对应的尺寸的图片，这样既减少了请求的次数，也降低了维护的复杂度。</p>
+        <h2 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h2><h3 id="动画的介绍"><a href="#动画的介绍" class="headerlink" title="动画的介绍"></a>动画的介绍</h3><ul>
+<li>用<code>@keyframes 动画名 {}</code>定义一个动画</li>
+<li>该动画可以被多个元素重复使用</li>
+</ul>
+<h3 id="动画的定义及使用"><a href="#动画的定义及使用" class="headerlink" title="动画的定义及使用"></a>动画的定义及使用</h3><ul>
+<li>简单示例<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">        <span class="selector-class">.box</span> &#123;</span></span><br><span class="line"><span class="undefined">            margin: 100px;</span></span><br><span class="line"><span class="undefined">            width: 100px;</span></span><br><span class="line"><span class="undefined">            height: 100px;</span></span><br><span class="line"><span class="undefined">            background-color: yellowgreen;</span></span><br><span class="line"><span class="undefined">            transform: translateX(0px);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">            animation: boxAnimation 1s;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="css">        @<span class="keyword">keyframes</span> boxAnimation &#123;</span></span><br><span class="line"><span class="undefined">            form &#123;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">            to &#123;</span></span><br><span class="line"><span class="undefined">                transform: translateX(300px);</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="image/move.gif"></p>
+<h3 id="动画的属性介绍"><a href="#动画的属性介绍" class="headerlink" title="动画的属性介绍"></a>动画的属性介绍</h3><ul>
+<li>animation-name：动画名称 </li>
+<li>animation-duration：动画的持续时间</li>
+<li>animation-timing-function： 动画的过渡类型 <ul>
+<li>linear： 线性过渡。等同于贝塞尔曲线(0.0, 0.0, 1.0, 1.0) </li>
+<li>ease： 平滑过渡。等同于贝塞尔曲线(0.25, 0.1, 0.25, 1.0) </li>
+<li>ease-in： 由慢到快。等同于贝塞尔曲线(0.42, 0, 1.0, 1.0) </li>
+<li>ease-out： 由快到慢。等同于贝塞尔曲线(0, 0, 0.58, 1.0) </li>
+<li>ease-in-out： 由慢到快再到慢。等同于贝塞尔曲线(0.42, 0, 0.58, 1.0) </li>
+<li>step-start： 等同于 steps(1, start) </li>
+<li>step-end： 等同于 steps(1, end) </li>
+<li>steps(<integer>[, [ start | end ] ]?)： 接受两个参数的步进函数。第一个参数必须为正整数，指定函数的步数。第二个参数取值可以是start或end，指定每一步的值发生变化的时间点。第二个参数是可选的，默认值为end。 </integer></li>
+<li>cubic-bezier(<number>, <number>, <number>, <number>)： 特定的贝塞尔曲线类型，4个数值需在[0, 1]区间内 </number></number></number></number></li>
+</ul>
+</li>
+<li>animation-delay： 动画延迟的时间 </li>
+<li>animation-iteration-count： 动画的循环次数 </li>
+<li>animation-direction： 动画是否反向运动 <ul>
+<li>normal： 正常方向 </li>
+<li>reverse： 反方向运行, 从动画结束状态运行到动画开始状态 </li>
+<li>alternate： 动画先正常运行再反方向运行，并持续交替运行 </li>
+<li>alternate-reverse： 动画先反运行再正方向运行，并持续交替运行</li>
+</ul>
+</li>
+<li>animation-fill-mode： 动画结束状态<ul>
+<li>none： 结束还原</li>
+<li>forwards： 保存结束时状态</li>
+<li>backwards： 动画等待时，使用0%时的样式，结束后还原</li>
+<li>both：动画等待时，使用0%时的样式， 结速后保持最后一帧的样式</li>
+</ul>
+</li>
+<li>animation: 复合写法<ul>
+<li>anmatiton： boxAnimation 1s linear 2s 10 reverse forwards;</li>
+<li>解释： 延迟两秒(2s)， 匀速(linerar) 反方向(reverse) 执行 boxAnimation 动画， 时长为1秒(1s)， 重复10次(10)。</li>
+</ul>
+</li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/03/响应式开发轮播图的一个优化方案/" data-id="cjas5gkvo0000ggulcs30cpqb" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/13/09-动画/" data-id="cjb0p1ekm000n5oulkx5c7o65" class="article-share-link">Partager</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习/">学习</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/心情/">心情</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
 
     </footer>
   </div>
@@ -291,14 +332,14 @@
 
 
   
-    <article id="post-hexo搭建博客" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-07-变换" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/06/28/hexo搭建博客/" class="article-date">
-  <time datetime="2017-06-27T17:12:29.000Z" itemprop="datePublished">2017-06-28</time>
+    <a href="/2017/07/12/07-变换/" class="article-date">
+  <time datetime="2017-07-12T14:00:35.000Z" itemprop="datePublished">2017-07-12</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/git/">git</a>
+    <a class="article-category-link" href="/categories/h5c3/">h5c3</a>
   </div>
 
   </div>
@@ -309,7 +350,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/28/hexo搭建博客/">hexo搭建个人博客</a>
+      <a class="article-title" href="/2017/07/12/07-变换/">H5C3--变换</a>
     </h1>
   
 
@@ -317,43 +358,43 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="hexo创建博客（了解）"><a href="#hexo创建博客（了解）" class="headerlink" title="hexo创建博客（了解）"></a>hexo创建博客（了解）</h2><p><code>npm，node这些命令是在windows环境下运行的，需要在cmd中敲</code></p>
-<h3 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h3><p>需要设置这两个命令： 默认连接的网站npmjs.org，国外的网站，连不上，把服务器的地址改到淘宝</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm config set registry https:<span class="comment">//registry.npm.taobao.org --global</span></span><br><span class="line">npm config set disturl https:<span class="comment">//npm.taobao.org/dist --global</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>安装hexo</li>
+        <h2 id="变换"><a href="#变换" class="headerlink" title="变换"></a>变换</h2><h3 id="缩放"><a href="#缩放" class="headerlink" title="缩放"></a>缩放</h3><ul>
+<li>scale()： 指定对象的2D scale（2D缩放）。第一个参数对应X轴，第二个参数对应Y轴。如果第二个参数未提供，则默认取第一个参数的值 </li>
+<li>scalex()： 指定对象X轴的（水平方向）缩放 </li>
+<li>scaley()： 指定对象Y轴的（垂直方向）缩放 </li>
+<li>以自己的中心点缩放</li>
 </ul>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo</span><br><span class="line"></span><br><span class="line">hexo -v  # 查看hexo的版本信息</span><br></pre></td></tr></table></figure>
-<ul>
-<li>初始化博客</li>
+<h3 id="平移"><a href="#平移" class="headerlink" title="平移"></a>平移</h3><ul>
+<li>translate()： 指定对象的2D translation（2D平移）。第一个参数对应X轴，第二个参数对应Y轴。如果第二个参数未提供，则默认值为0 </li>
+<li>translatex()： 指定对象X轴（水平方向）的平移 </li>
+<li>translatey()： 指定对象Y轴（垂直方向）的平移 </li>
+<li>中心点水平或垂直移动</li>
 </ul>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 新建一个目录  blog</span><br><span class="line">hexo init  # 初始化</span><br></pre></td></tr></table></figure>
-<ul>
-<li>生成静态页面</li>
+<h3 id="旋转"><a href="#旋转" class="headerlink" title="旋转"></a>旋转</h3><ul>
+<li>rotate()： 指定对象的2D rotation（2D旋转），需先有 &lt;’ transform-origin ‘&gt; 属性的定义 </li>
 </ul>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo generate   # 生成静态页面	</span><br><span class="line">hexo g          # 生成静态页面（简写）</span><br></pre></td></tr></table></figure>
-<ul>
-<li>启动服务</li>
+<h3 id="变形"><a href="#变形" class="headerlink" title="变形"></a>变形</h3><ul>
+<li>skew()： 指定对象skew transformation（斜切扭曲）。第一个参数对应X轴，第二个参数对应Y轴。如果第二个参数未提供，则默认值为0 </li>
+<li>skewx()： 指定对象X轴的（水平方向）扭曲 </li>
+<li>skewy()： 指定对象Y轴的（垂直方向）扭曲 </li>
 </ul>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo server   # 启动服务</span><br><span class="line">hexo s        # 简写</span><br></pre></td></tr></table></figure>
-<ul>
-<li>访问站点</li>
+<h3 id="中心点"><a href="#中心点" class="headerlink" title="中心点"></a>中心点</h3><ul>
+<li>transform-origin： 指定点心点位置<ul>
+<li>语法： transform-origin: x-axis y-axis z-axis;</li>
+<li>值可以设为left right bottom top, 或者百分比，或者像素值<br><img src="image/2017-10-13-23-15-23.png"></li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:<span class="comment">//localhost:4000/  # 通过这个地址就可以访问了</span></span><br></pre></td></tr></table></figure>
-<h3 id="hexo常见命令"><a href="#hexo常见命令" class="headerlink" title="hexo常见命令"></a>hexo常见命令</h3><p><a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">hexo中文文档</a></p>
-<h3 id="博客格式"><a href="#博客格式" class="headerlink" title="博客格式"></a>博客格式</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 我的第一篇博客<span class="comment">//(注意冒号后面有一个空格不能丢。)</span></span><br><span class="line">date: <span class="number">2017</span><span class="number">-10</span><span class="number">-28</span> <span class="number">01</span>:<span class="number">12</span>:<span class="number">29</span> <span class="comment">//指定博客的日期</span></span><br><span class="line">tags: </span><br><span class="line">  - 学习</span><br><span class="line">  - 随笔</span><br><span class="line">  - 心情</span><br><span class="line">categories: </span><br><span class="line">  - javascript</span><br><span class="line">---</span><br><span class="line"># 我是大标题</span><br><span class="line">这后面的内容就跟普通的markdown文件没什么区别</span><br></pre></td></tr></table></figure>
-<h3 id="发布配置"><a href="#发布配置" class="headerlink" title="发布配置"></a>发布配置</h3><p>安装hexo的部署工具<code>npm install hexo-deployer-git --save</code></p>
-<p>修改<code>_config.yml</code>文件</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># Site</span><br><span class="line">title: 网站标题</span><br><span class="line">subtitle: 子标题</span><br><span class="line">description: 无</span><br><span class="line">author: HUCC</span><br><span class="line">language: zh-CN</span><br><span class="line">timezone:</span><br><span class="line"></span><br><span class="line"># 发布配置</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: github仓库地址</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-<p>使用<code>hexo d</code>发布博客</p>
+</li>
+</ul>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">        <span class="selector-class">.box1</span> &#123;</span></span><br><span class="line"><span class="undefined">            float: left;</span></span><br><span class="line"><span class="undefined">            width: 150px;</span></span><br><span class="line"><span class="undefined">            height: 150px;</span></span><br><span class="line"><span class="undefined">            background-color: yellowgreen;</span></span><br><span class="line"><span class="undefined">            margin: 30px;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">transform</span>: <span class="selector-tag">scale</span>(0<span class="selector-class">.5</span>, 0<span class="selector-class">.5</span>);</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="css">        <span class="selector-class">.box2</span> &#123;</span></span><br><span class="line"><span class="undefined">            float: left;</span></span><br><span class="line"><span class="undefined">            width: 150px;</span></span><br><span class="line"><span class="undefined">            height: 150px;</span></span><br><span class="line"><span class="undefined">            background-color: yellowgreen;</span></span><br><span class="line"><span class="undefined">            margin: 30px;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="css">        <span class="selector-class">.box3</span> &#123;</span></span><br><span class="line"><span class="undefined">            float: left;</span></span><br><span class="line"><span class="undefined">            width: 150px;</span></span><br><span class="line"><span class="undefined">            height: 150px;</span></span><br><span class="line"><span class="undefined">            background-color: yellowgreen;</span></span><br><span class="line"><span class="undefined">            margin: 30px;</span></span><br><span class="line"><span class="undefined">            transform-origin: left top;</span></span><br><span class="line"><span class="undefined">            transform: skew(0, 10deg);</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="css">        <span class="selector-class">.box4</span> &#123;</span></span><br><span class="line"><span class="undefined">            float: left;</span></span><br><span class="line"><span class="undefined">            width: 150px;</span></span><br><span class="line"><span class="undefined">            height: 150px;</span></span><br><span class="line"><span class="undefined">            background-color: yellowgreen;</span></span><br><span class="line"><span class="undefined">            margin: 30px;</span></span><br><span class="line"><span class="undefined">            transform-origin: left top;</span></span><br><span class="line"><span class="undefined">            transform: translateY(100px);</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="css">        <span class="selector-class">.box5</span> &#123;</span></span><br><span class="line"><span class="undefined">            float: left;</span></span><br><span class="line"><span class="undefined">            width: 150px;</span></span><br><span class="line"><span class="undefined">            height: 150px;</span></span><br><span class="line"><span class="undefined">            background-color: yellowgreen;</span></span><br><span class="line"><span class="undefined">            margin: 30px;</span></span><br><span class="line"><span class="undefined">            transform-origin: left top;</span></span><br><span class="line"><span class="undefined">            transform: rotate(45deg);</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box1"</span>&gt;</span>缩放0.5<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box2"</span>&gt;</span>正常<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box3"</span>&gt;</span>水平拉伸10deg<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box4"</span>&gt;</span>y方向平移100<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box5"</span>&gt;</span>旋转45度<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><img src="image/2017-10-14-11-46-06.png"></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/28/hexo搭建博客/" data-id="cjahx0vrg00003culz7mxaisw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/12/07-变换/" data-id="cjb0p1ekm000h5oullx8bd9ia" class="article-share-link">Partager</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习/">学习</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/心情/">心情</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
 
     </footer>
   </div>
@@ -362,14 +403,14 @@
 
 
   
-    <article id="post-封装touch局部滚动" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-08-3d变换" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/04/11/封装touch局部滚动/" class="article-date">
-  <time datetime="2017-04-11T12:32:11.000Z" itemprop="datePublished">2017-04-11</time>
+    <a href="/2017/07/12/08-3d变换/" class="article-date">
+  <time datetime="2017-07-12T13:46:27.000Z" itemprop="datePublished">2017-07-12</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/移动web/">移动web</a>
+    <a class="article-category-link" href="/categories/h5c3/">h5c3</a>
   </div>
 
   </div>
@@ -380,7 +421,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/11/封装touch局部滚动/">封装一个touch局部触摸滑动函数</a>
+      <a class="article-title" href="/2017/07/12/08-3d变换/">H5C3--3D变换</a>
     </h1>
   
 
@@ -388,15 +429,42 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>##封装一个touch局部触摸滑动函数<br>   <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"> 需要给ul设置overflow:auto,  在js中去除滚动条的样式</span><br><span class="line"></span><br><span class="line">在css中给ul的外盒子设置样式去除滚动条样式</span><br><span class="line">&amp;::-webkit-scrollbar &#123;</span><br><span class="line">width: <span class="number">0</span>px;</span><br><span class="line">height: <span class="number">0</span>px;</span><br><span class="line">&#125;</span><br><span class="line">&amp;::-webkit-scrollbar-thumb &#123;</span><br><span class="line">border-radius: <span class="number">5</span>px;</span><br><span class="line">-webkit-box-shadow: inset <span class="number">0</span> <span class="number">0</span> <span class="number">5</span>px rgba(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0.2</span>);</span><br><span class="line">background: rgba(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0.2</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">在js中</span><br><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    titleslide();   <span class="comment">//或者在ajax获取数据后执行这个代码</span></span><br><span class="line">   &#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">titleslide</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">     <span class="keyword">var</span> slideulwidth =<span class="number">0</span>;</span><br><span class="line">     <span class="built_in">document</span>.querySelectorAll(<span class="string">'.navbar li'</span>).forEach(<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">        slideulwidth +=e.offsetWidth;</span><br><span class="line">     &#125;);    </span><br><span class="line">     <span class="built_in">console</span>.log(slideulwidth);</span><br><span class="line">     <span class="keyword">var</span> startX = moveX = distanceX = currentX = <span class="number">0</span>;</span><br><span class="line">     <span class="keyword">var</span> slideTop = <span class="built_in">document</span>.querySelector(<span class="string">'.navbar'</span>);</span><br><span class="line">     <span class="keyword">var</span> slideul = slideTop.querySelector(<span class="string">'ul'</span>);</span><br><span class="line">     $(slideul).css(<span class="string">'width'</span>,slideulwidth);</span><br><span class="line">     slideul.addEventListener(<span class="string">'touchstart'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">         startX = e.touches[<span class="number">0</span>].clientX;</span><br><span class="line">     &#125;);</span><br><span class="line">     slideul.addEventListener(<span class="string">'touchmove'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">        e.preventDefault();</span><br><span class="line">        moveX = e.touches[<span class="number">0</span>].clientX;</span><br><span class="line">        distanceX = moveX - startX;</span><br><span class="line">        <span class="keyword">if</span>((currentX+distanceX)&lt;slidemax &amp;&amp; (currentX+distanceX)&gt;slidemin)&#123;</span><br><span class="line">            slideul.style.transform = <span class="string">'translateX('</span>+(distanceX+currentX)+<span class="string">'px)'</span>;</span><br><span class="line">            slideul.style.transition= <span class="string">'all .2s'</span>;</span><br><span class="line">        &#125;</span><br><span class="line">     &#125;);</span><br><span class="line">     slideul.addEventListener(<span class="string">'touchend'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">         currentX +=distanceX;</span><br><span class="line">         <span class="keyword">if</span>(currentX &gt; positionmax)&#123;</span><br><span class="line">            currentX = <span class="number">0</span>;</span><br><span class="line">         &#125;</span><br><span class="line">         <span class="keyword">if</span>(currentX &lt; positionmin)&#123;</span><br><span class="line">            currentX = positionmin;</span><br><span class="line">         &#125;</span><br><span class="line">         slideul.style.transform = <span class="string">'translateX('</span>+currentX+<span class="string">'px)'</span>;</span><br><span class="line">         slideul.style.transition= <span class="string">'all .2s'</span>;</span><br><span class="line">     &#125;);</span><br><span class="line">     </span><br><span class="line">     <span class="keyword">var</span> width = slideTop.offsetWidth;</span><br><span class="line">     <span class="keyword">var</span> positionmax = <span class="number">0</span> ;</span><br><span class="line">     <span class="keyword">var</span> positionmin = width - slideulwidth;</span><br><span class="line">     <span class="built_in">console</span>.log(positionmin);</span><br><span class="line">     <span class="keyword">var</span> slidemax = <span class="number">0</span> + <span class="number">100</span>;</span><br><span class="line">     <span class="keyword">var</span> slidemin =positionmin <span class="number">-100</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <h2 id="3D变换"><a href="#3D变换" class="headerlink" title="3D变换"></a>3D变换</h2><blockquote>
+<p>需要将 transform-style：preserve-3d 才能实现3d效果，默认值为flat，只能实现平面的动画效果</p>
+</blockquote>
+<h3 id="平移"><a href="#平移" class="headerlink" title="平移"></a>平移</h3><ul>
+<li>沿y轴方向平移</li>
+<li>沿x轴方向平移</li>
+<li>沿z轴方向平移</li>
+</ul>
+<h3 id="旋转"><a href="#旋转" class="headerlink" title="旋转"></a>旋转</h3><ul>
+<li>沿x轴旋转</li>
+<li>沿y轴旋转</li>
+<li>沿z轴旋转</li>
+</ul>
+<h3 id="视距"><a href="#视距" class="headerlink" title="视距"></a>视距</h3><ul>
+<li>属性为： perspective</li>
+<li>可以简单把电脑屏幕理解成一块透明玻璃; persipective理解成眼睛和电脑物体中的距离</li>
+<li>值越小，3d效果越明显</li>
+<li>设置给父元素： 相当于眼睛是父元素的正前方 perspective: 100px </li>
+<li>设置给子元素： 相当于眼睛在子元素的正前方 transform: perspective(100px)</li>
+</ul>
+<h3 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h3><ul>
+<li><p>代表</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">        <span class="selector-class">.bigbox</span><span class="selector-pseudo">:hover</span>&gt;<span class="selector-tag">li</span> &#123;</span></span><br><span class="line"><span class="undefined">            transition: all 1s;</span></span><br><span class="line"><span class="undefined">            transform: rotateY(90deg);</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="css">        <span class="selector-class">.bigbox</span> &#123;</span></span><br><span class="line"><span class="css">            <span class="comment">/* perspective: 1000px; */</span></span></span><br><span class="line"><span class="undefined">            list-style: none;</span></span><br><span class="line"><span class="undefined">            text-align: center;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">border</span>: 1<span class="selector-tag">px</span> <span class="selector-tag">solid</span> <span class="selector-id">#000</span>;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="css">        <span class="selector-class">.bigbox</span> &gt; <span class="selector-tag">li</span> &#123;</span></span><br><span class="line"><span class="undefined">            display: inline-block;</span></span><br><span class="line"><span class="undefined">            width: 150px;</span></span><br><span class="line"><span class="undefined">            height: 150px;</span></span><br><span class="line"><span class="undefined">            margin: 20px;</span></span><br><span class="line"><span class="undefined">            background-color: yellowgreen;</span></span><br><span class="line"><span class="undefined">            transform-style: preserve-3d;</span></span><br><span class="line"><span class="undefined">            transform-origin: center;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"bigbox"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"box1"</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"box2"</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"box3"</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"box4"</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"box5"</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>给父元素设视距<br><img src="./image/translate.gif" alt=""></p>
+</li>
+<li>不给父元素设视距<br><img src="./image/translate2.gif" alt=""></li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/04/11/封装touch局部滚动/" data-id="cjatituen0000goulaaa4m46r" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/12/08-3d变换/" data-id="cjb0p1ekm000c5oulz4lej1ot" class="article-share-link">Partager</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习/">学习</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
 
     </footer>
   </div>
@@ -405,14 +473,14 @@
 
 
   
-    <article id="post-jQuery的attr和prop方法终极理解" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-15-拖拽" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/03/28/jQuery的attr和prop方法终极理解/" class="article-date">
-  <time datetime="2017-03-28T12:12:29.000Z" itemprop="datePublished">2017-03-28</time>
+    <a href="/2017/07/12/15-拖拽/" class="article-date">
+  <time datetime="2017-07-12T13:25:33.000Z" itemprop="datePublished">2017-07-12</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/jQuery/">jQuery</a>
+    <a class="article-category-link" href="/categories/h5c3/">h5c3</a>
   </div>
 
   </div>
@@ -423,7 +491,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/28/jQuery的attr和prop方法终极理解/">jQuey中attr和prop终极理解</a>
+      <a class="article-title" href="/2017/07/12/15-拖拽/">H5C3--拖拽</a>
     </h1>
   
 
@@ -431,15 +499,210 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>##jQuery的attr和prop终极解答<br>   <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">开发中我们用jq对对象属性的操作，为避免问题，selected,disabled，checked这样的属性用prop，其他用attr,</span><br><span class="line">至少我之前一直这样去避免，那么为什么用attr设置这些属性不行呢？</span><br><span class="line">究其本质，attr底层使用了原生js的setAttribute和getAttribute，操作的是标签的属性attribute，而不是dom对象的property,在浏览器将html字符串构建dom对象的过程中，会将html的属性也生成dom的属性节点，但是并不能</span><br><span class="line">完全一一对应，比如标签的自定义属性，在dom对象里就没有，另外<span class="class"><span class="keyword">class</span>,<span class="title">selected</span>,<span class="title">disabled</span>,<span class="title">checked</span>,<span class="title">value</span>这些</span></span><br><span class="line">在dom对象中分别对应着className,defaultSelected,defaultDisabled,defaultChecked,defaultValue,所以这里就不难理解attr设置与我们的想象不一样了，比如你想设置checkbox选中，用attr你需要设置成attr("checked","checked"),而用prop是直接操作dom对象的，用的prop('checked',true)</span><br><span class="line">补充：其实这里不管使用attr设置，只要后面的值不是<span class="literal">undefined</span>或者<span class="literal">null</span>,哪怕你设置<span class="number">0</span>，或者空字符串，checkbox都会选中。</span><br><span class="line">最佳实践：option的selected属性，checkbox的checked属性，input框禁用操作建议使用prop,其他属性推荐使用attr,其中自定义属性的取值推荐使用data()方法</span><br><span class="line">以下供理解的代码</span><br><span class="line">###html部分代码</span><br><span class="line">&lt;!--&lt;div id="box" class="hehe" title="哈哈" aa="bb"&gt;&lt;/div&gt;--&gt;</span><br><span class="line">&lt;!--&lt;input type="text" value="11" id="txt"&gt;--&gt;</span><br><span class="line">&lt;!-- &lt;input type="text" id="txt"&gt; --&gt;</span><br><span class="line">&lt;!--标签的checked属性对应了dom对象中defaultChecked属性--&gt;</span><br><span class="line">&lt;!--&lt;input type="checkbox" checked="checked" id="ck"&gt;--&gt;</span><br><span class="line"> ###js部分代码</span><br><span class="line">  // 自定义属性  ：只有标签有   只能用  attr</span><br><span class="line">  // 对于 id title  ：attr和  prop都可以</span><br><span class="line">  // 对于selected checked disabled   prop方法</span><br><span class="line">  // value    val</span><br><span class="line">  var ck = document.getElementById("ck");</span><br><span class="line">  //var box = document.getElementById("box");</span><br><span class="line">  //console.log(box.className);</span><br><span class="line">  //console.log(box.getAttribute("className"));</span><br><span class="line"></span><br><span class="line">  //这三个方法是用直接操作标签属性的</span><br><span class="line">  //getAttribute("")</span><br><span class="line">  //setAttribute("")</span><br><span class="line">  //removeAttribute("")</span><br><span class="line"></span><br><span class="line">  // "一一对应"</span><br><span class="line">  //var box = document.getElementById("box");</span><br><span class="line">  //console.log(box.aa);</span><br><span class="line"></span><br><span class="line">  //input 的 value 对应的是  对象的defaultValue</span><br><span class="line"></span><br><span class="line">  // input框中的值 对应的是 value</span><br><span class="line"></span><br><span class="line">  //var txt = document.getElementById("txt");</span><br><span class="line">  //console.log(txt.id);</span><br><span class="line">  //console.log(txt.value);//对应的是框里面的内容，这个值是用户可以修改的。</span><br></pre></td></tr></table></figure></p>
+        <h2 id="拖拽"><a href="#拖拽" class="headerlink" title="拖拽"></a>拖拽</h2><h3 id="拖拽事件"><a href="#拖拽事件" class="headerlink" title="拖拽事件"></a>拖拽事件</h3><ul>
+<li>要想让一个元素可以被拖拽，需要设置其 draggable=”true”</li>
+<li><p>被拖拽的子元素，可以实现以下事件：</p>
+<ul>
+<li>ondragstart： 拖拽开始</li>
+<li>ondrag：拖拽中</li>
+<li>ondragend： 拖拽结束</li>
+<li>ondragleave： 离开父盒子</li>
+<li>ondrop: 松手</li>
+</ul>
+</li>
+<li><p>对被拖入子元素的父盒子</p>
+<ul>
+<li>ondragover： 经过父盒子</li>
+<li>ondragenter： 进入父盒子<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3></li>
+</ul>
+</li>
+<li>将红色方块从第一个盒子移入第二个盒子中<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">        <span class="selector-class">.box1</span>, <span class="selector-class">.box2</span> &#123;</span></span><br><span class="line"><span class="undefined">            width: 800px;</span></span><br><span class="line"><span class="undefined">            height: 200px;</span></span><br><span class="line"><span class="undefined">            background-color: yellowgreen;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="css">        <span class="selector-class">.littleBox</span> &#123;</span></span><br><span class="line"><span class="undefined">            width: 100px;</span></span><br><span class="line"><span class="undefined">            height: 100px;</span></span><br><span class="line"><span class="undefined">            background-color: red;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h3</span>&gt;</span>第一个盒子<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box1"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"littleBox"</span> <span class="attr">draggable</span>=<span class="string">"true"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h3</span>&gt;</span>第二个盒子<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box2"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">     <span class="keyword">var</span> littleBox = <span class="built_in">document</span>.querySelector(<span class="string">".littleBox"</span>);</span></span><br><span class="line"><span class="javascript">     <span class="keyword">var</span> beginBox = <span class="built_in">document</span>.querySelector(<span class="string">".box1"</span>);</span></span><br><span class="line"><span class="javascript">     <span class="keyword">var</span> endBox = <span class="built_in">document</span>.querySelector(<span class="string">".box2"</span>);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">     <span class="comment">//开始拖拽</span></span></span><br><span class="line"><span class="javascript">     littleBox.ondragstart = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">         <span class="built_in">console</span>.log(<span class="string">"开始拖拽"</span>);</span></span><br><span class="line"><span class="undefined">     &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">     <span class="comment">//拖拽中</span></span></span><br><span class="line"><span class="javascript">     littleBox.ondrag = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">         <span class="built_in">console</span>.log(<span class="string">"正在拖拽"</span>);</span></span><br><span class="line"><span class="undefined">     &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">     <span class="comment">//拖拽结束</span></span></span><br><span class="line"><span class="javascript">     littleBox.ondragend = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">         <span class="built_in">console</span>.log(<span class="string">"结束拖拽"</span>);</span></span><br><span class="line"><span class="undefined">     &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">     <span class="comment">//离开父盒子</span></span></span><br><span class="line"><span class="javascript">     littleBox.ondragleave = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">         <span class="built_in">console</span>.log(<span class="string">"离开父盒子"</span>);</span></span><br><span class="line"><span class="undefined">     &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">     <span class="comment">//为下面的盒子绑定拖入事件</span></span></span><br><span class="line"><span class="javascript">     <span class="comment">//默认是不允许拖入的， 修改默认值</span></span></span><br><span class="line"><span class="javascript">     endBox.ondragover = <span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">         <span class="comment">//阻止默认行为</span></span></span><br><span class="line"><span class="undefined">         event.preventDefault();</span></span><br><span class="line"><span class="undefined">     &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">     endBox.ondragenter = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">         <span class="built_in">console</span>.log(<span class="string">"进入"</span>);</span></span><br><span class="line"><span class="undefined">     &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">     endBox.ondrop = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">         <span class="built_in">console</span>.log(<span class="string">"松手"</span>);</span></span><br><span class="line"><span class="javascript">         <span class="keyword">this</span>.appendChild(littleBox);</span></span><br><span class="line"><span class="undefined">     &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="./image/drag.gif" alt=""></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/28/jQuery的attr和prop方法终极理解/" data-id="cjas8o92u00001culxa3h22hv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/12/15-拖拽/" data-id="cjb0p1el100125oul2qazabjb" class="article-share-link">Partager</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-02-transition过渡" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/12/02-transition过渡/" class="article-date">
+  <time datetime="2017-07-12T13:23:21.000Z" itemprop="datePublished">2017-07-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/h5c3/">h5c3</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/12/02-transition过渡/">H5C3--transition过渡</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="transition过渡"><a href="#transition过渡" class="headerlink" title="transition过渡"></a>transition过渡</h2><h3 id="1-过渡是怎么回事"><a href="#1-过渡是怎么回事" class="headerlink" title="1. 过渡是怎么回事"></a>1. 过渡是怎么回事</h3><ul>
+<li>假如某个css属性 P，它有一个初始值a，再设一个初始值b。指定P属性是可以过渡显示的，那么当P从a变到b时，会有一个动画的效果。</li>
+<li><p>注意： 伪类的过渡会还原，非伪类元素动画执行完成后，会保存动画完成时的状态</p>
+</li>
+<li><p>transtion的几个属性： </p>
+<ul>
+<li>transition-property: 就是上面那个P，比如说你指定width发生变化， 就填width;</li>
+<li>transition-duration: 动画的时间 多少秒 比如 1s</li>
+<li>transition-timing-function: 动画执行的速度效果</li>
+<li>transition-delay: 延迟几秒执行</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-过渡的复合写法"><a href="#2-过渡的复合写法" class="headerlink" title="2. 过渡的复合写法"></a>2. 过渡的复合写法</h3><ol>
+<li><p>某一个属性发生变化时，执行动画</p>
+<ul>
+<li>transition: width 1s linear 2s;</li>
+<li>width: 指定元素的width发生变化时，发生动画</li>
+<li>1s: 指定动画时长为1s</li>
+<li>linear: 指定动画为匀速</li>
+<li>2s: 指定延时两秒执行</li>
+</ul>
+</li>
+<li><p>所有属性变化时， 都执行动画</p>
+<ul>
+<li>transition: all 1s linear;</li>
+<li>all代表所有属性，只要发生变化都执行动画，时长都是1秒</li>
+<li>但如果各个属性执行动画的时长不一样呢?</li>
+</ul>
+</li>
+<li><p>几个属性变化时，各自执行动画</p>
+<ul>
+<li>transition: width 1s linear, height 1s ease 1s;</li>
+<li>代表width和height都会动画，但各自有自己的动画的参数;</li>
+</ul>
+</li>
+<li><p>多个属性动画，分开写（如果参数相同，可以合并）</p>
+<ul>
+<li>可以多个属性分开写  <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">transition-property</span>: <span class="selector-tag">width</span>, <span class="selector-tag">height</span>;</span><br><span class="line"><span class="selector-tag">transition-duration</span>: 1<span class="selector-tag">s</span>; <span class="comment">/*代表都是执行一秒，合并了*/</span></span><br><span class="line"><span class="selector-tag">transition-timing-function</span>: <span class="selector-tag">ease</span>, <span class="selector-tag">ease-in</span>;</span><br><span class="line"><span class="selector-tag">transition-delay</span>: 2<span class="selector-tag">s</span>;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="3-transtion支持的属性"><a href="#3-transtion支持的属性" class="headerlink" title="3. transtion支持的属性"></a>3. transtion支持的属性</h3><ul>
+<li>transition-property是用来指定当元素其中一个属性改变时执行transition效果: 所支持的属性类型如下：<ul>
+<li>color: 通过红、绿、蓝和透明度组件变换（每个数值处理）如：background-color,border-color,color,outline-color等css属性；</li>
+<li>length: 真实的数  * 字 如：word-spacing,width,vertical-align,top,right,bottom,left,padding,outline-width,margin,min-width,min-height,max-width,max-height,line-height,height,border-width,border-spacing,background-position等属性；</li>
+<li>percentage:真实的数字 如：word-spacing,width,vertical-align,top,right,bottom,left,padding,outline-width,margin,min-width,min-height,max-width,max-height,line-height,height,border-width,border-spacing,background-position等属性；</li>
+<li>integer离散步骤（整个数字），在真实的数字空间，以及使用floor()转换为整数时发生 如：outline-offset,z-index等属性；</li>
+<li>number真实的（浮点型）数值，如：zoom,opacity,font-weight,等属性；</li>
+<li>transform list</li>
+<li>rectangle:通过x, y, width 和 height（转为数值）变换，如：crop</li>
+<li>visibility: 离散步骤，在0到1数字范围之内，0表示“隐藏”，1表示完全“显示”,如：visibility</li>
+<li>shadow: 作用于color, x, y 和 blur（模糊）属性,如：text-shadow</li>
+<li>gradient: 通过每次停止时的位置和颜色进行变化。它们必须有相同的类型（放射状的或是线性的）和相同的停止数值以便执行动画,如：background-image</li>
+<li>paint server (SVG): 只支持下面的情况：从gradient到gradient以及color到color，然后工作与上面类似space-separated list of above:如果列表有相同的项目数值，则列表每一项按照上面的规则进行变化，否则无变化</li>
+<li>a shorthand property: 如果缩写的所有部分都可以实现动画，则会像所有单个属性变化一样变化</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-附录：动画速度样式详解"><a href="#3-附录：动画速度样式详解" class="headerlink" title="3. 附录：动画速度样式详解"></a>3. 附录：动画速度样式详解</h3><ul>
+<li>linear： 线性过渡。等同于贝塞尔曲线(0.0, 0.0, 1.0, 1.0) </li>
+<li>ease： 平滑过渡。等同于贝塞尔曲线(0.25, 0.1, 0.25, 1.0) </li>
+<li>ease-in： 由慢到快。等同于贝塞尔曲线(0.42, 0, 1.0, 1.0) </li>
+<li>ease-out： 由快到慢。等同于贝塞尔曲线(0, 0, 0.58, 1.0) </li>
+<li>ease-in-out： 由慢到快再到慢。等同于贝塞尔曲线(0.42, 0, 0.58, 1.0) </li>
+<li>step-start： 等同于 steps(1, start) </li>
+<li>step-end： 等同于 steps(1, end) </li>
+<li>steps(integer)： 分多少步完成</li>
+<li><img src="./image/动画.png" width="600"></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/07/12/02-transition过渡/" data-id="cjb0p1ek600045oulk2wt7m07" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-17-本地存储" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/12/17-本地存储/" class="article-date">
+  <time datetime="2017-07-12T13:15:13.000Z" itemprop="datePublished">2017-07-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/h5c3/">h5c3</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/12/17-本地存储/">H5C3--本地存储</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="本地存储"><a href="#本地存储" class="headerlink" title="本地存储"></a>本地存储</h2><h3 id="本地存储介绍"><a href="#本地存储介绍" class="headerlink" title="本地存储介绍"></a>本地存储介绍</h3><ul>
+<li>可以再浏览器开发者界面的 application中查看,找到对应的localStorage 或者 sessionStorage即可</li>
+<li>由于h5中新推出，游览器的兼容性一般，了解即可</li>
+<li>可能保存字符串</li>
+<li>保存非私密信息</li>
+</ul>
+<h3 id="API"><a href="#API" class="headerlink" title="API"></a>API</h3><ul>
+<li>两种方式  <ul>
+<li>window.sessionStorage： 游览器关闭之后，即清空</li>
+<li>window.localStorage：游览器关闭之后，依然存在的，除非手动清空</li>
+</ul>
+</li>
+<li>要用的到的api<ul>
+<li>setItem(key,valuee) 设置</li>
+<li>getItem(key) 获取</li>
+<li>removeItem(key) 移除</li>
+<li>clear() 清空</li>
+</ul>
+</li>
+</ul>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"welcome"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"http://www.baidu.com"</span> <span class="attr">method</span>=<span class="string">"get"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"username"</span> <span class="attr">class</span>=<span class="string">"username"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"password"</span> <span class="attr">name</span>=<span class="string">"password"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"提交"</span> <span class="attr">class</span>=<span class="string">"submit"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="comment">//取到本地保存的用户名</span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> name = <span class="built_in">window</span>.localStorage.getItem(<span class="string">"username"</span>);</span></span><br><span class="line"><span class="javascript">    <span class="keyword">if</span> (name) &#123;</span></span><br><span class="line"><span class="javascript">        <span class="comment">//如果有name， 就显示出来</span></span></span><br><span class="line"><span class="javascript">        <span class="built_in">document</span>.querySelector(<span class="string">".welcome"</span>).innerHTML = <span class="string">"欢迎你，"</span>+name;</span></span><br><span class="line"><span class="javascript">        <span class="built_in">document</span>.querySelector(<span class="string">".username"</span>).value = name;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="comment">//提交时保存name</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">document</span>.querySelector(<span class="string">".submit"</span>).onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> userName = <span class="built_in">document</span>.querySelector(<span class="string">".username"</span>).value;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">if</span> (userName) &#123;</span></span><br><span class="line"><span class="javascript">            <span class="built_in">window</span>.localStorage.setItem(<span class="string">"username"</span>, userName);</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/07/12/17-本地存储/" data-id="cjb0p1el100185oulojn6t1e1" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
 
     </footer>
   </div>
@@ -449,15 +712,19 @@
 
   
 
+
+  <nav id="page-nav">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">__('next') &raquo;</a>
+  </nav>
 </section>
         
           <aside id="sidebar">
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
+    <h3 class="widget-title">Catégories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/移动web/">移动web</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/项目问题及优化/">项目问题及优化</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/h5c3/">h5c3</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/移动web/">移动web</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/项目问题及优化/">项目问题及优化</a></li></ul>
     </div>
   </div>
 
@@ -465,9 +732,9 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
+    <h3 class="widget-title">Mot-clés</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习/">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/心情/">心情</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习/">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/心情/">心情</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
     </div>
   </div>
 
@@ -475,9 +742,9 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
+    <h3 class="widget-title">Nuage de mot-clés</h3>
     <div class="widget tagcloud">
-      <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/学习/" style="font-size: 20px;">学习</a> <a href="/tags/心情/" style="font-size: 15px;">心情</a> <a href="/tags/随笔/" style="font-size: 20px;">随笔</a>
+      <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/学习/" style="font-size: 16.67px;">学习</a> <a href="/tags/心情/" style="font-size: 13.33px;">心情</a> <a href="/tags/笔记/" style="font-size: 20px;">笔记</a> <a href="/tags/随笔/" style="font-size: 16.67px;">随笔</a>
     </div>
   </div>
 
@@ -494,7 +761,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
         
@@ -515,7 +782,7 @@
           </li>
         
           <li>
-            <a href="/2017/07/03/响应式开发轮播图的一个优化方案/">响应式开发轮播图的一个优化方案</a>
+            <a href="/2017/07/13/09-动画/">H5C3--动画</a>
           </li>
         
       </ul>
@@ -531,7 +798,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2017 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
