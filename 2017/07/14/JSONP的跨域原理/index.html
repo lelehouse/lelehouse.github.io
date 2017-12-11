@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>H5C3--新的js选择器和css操作方法 | Hexo</title>
+  <title>JSONP的跨域原理 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="新的js选择器和css操作方法新增的js选择器 document.QuerySelector(); 传id #test 传class .text 传tagname .li 返回的是满足条件的第一个元素   document.QuerySelectorAll(); 传id #test 传class .text 传tagn">
-<meta name="keywords" content="笔记">
+  <meta name="description" content="##JSONP的跨域原理 实践：a.ajax中将dataType设置为”jsonp” jsonp实现跨域的原理：1-$.ajax 解决跨域时 将dataType设置为 jsonp即可跨域 为哈？ 重要前提：ajax 受到同源策略的限制，不能进行跨域请求，浏览器限制的 在跨域的情况下，XMLHttpRequest对象 是">
+<meta name="keywords" content="分享">
 <meta property="og:type" content="article">
-<meta property="og:title" content="H5C3--新的js选择器和css操作方法">
-<meta property="og:url" content="http://yoursite.com/2017/07/12/14-新的JS选择器和css操作/index.html">
+<meta property="og:title" content="JSONP的跨域原理">
+<meta property="og:url" content="http://yoursite.com/2017/07/14/JSONP的跨域原理/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="新的js选择器和css操作方法新增的js选择器 document.QuerySelector(); 传id #test 传class .text 传tagname .li 返回的是满足条件的第一个元素   document.QuerySelectorAll(); 传id #test 传class .text 传tagname .li 返回的是满足条件的伪数组，即便只有一个，也可能使用数组    新">
-<meta property="og:updated_time" content="2017-12-10T11:32:21.758Z">
+<meta property="og:description" content="##JSONP的跨域原理 实践：a.ajax中将dataType设置为”jsonp” jsonp实现跨域的原理：1-$.ajax 解决跨域时 将dataType设置为 jsonp即可跨域 为哈？ 重要前提：ajax 受到同源策略的限制，不能进行跨域请求，浏览器限制的 在跨域的情况下，XMLHttpRequest对象 是不能进行跨域请求的 在跨域的情况下（将dataType设置为 jsonp 时），">
+<meta property="og:updated_time" content="2017-12-11T01:36:13.531Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="H5C3--新的js选择器和css操作方法">
-<meta name="twitter:description" content="新的js选择器和css操作方法新增的js选择器 document.QuerySelector(); 传id #test 传class .text 传tagname .li 返回的是满足条件的第一个元素   document.QuerySelectorAll(); 传id #test 传class .text 传tagname .li 返回的是满足条件的伪数组，即便只有一个，也可能使用数组    新">
+<meta name="twitter:title" content="JSONP的跨域原理">
+<meta name="twitter:description" content="##JSONP的跨域原理 实践：a.ajax中将dataType设置为”jsonp” jsonp实现跨域的原理：1-$.ajax 解决跨域时 将dataType设置为 jsonp即可跨域 为哈？ 重要前提：ajax 受到同源策略的限制，不能进行跨域请求，浏览器限制的 在跨域的情况下，XMLHttpRequest对象 是不能进行跨域请求的 在跨域的情况下（将dataType设置为 jsonp 时），">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -64,14 +64,14 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-14-新的JS选择器和css操作" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-JSONP的跨域原理" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/07/12/14-新的JS选择器和css操作/" class="article-date">
-  <time datetime="2017-07-12T13:05:13.000Z" itemprop="datePublished">2017-07-12</time>
+    <a href="/2017/07/14/JSONP的跨域原理/" class="article-date">
+  <time datetime="2017-07-14T13:17:28.000Z" itemprop="datePublished">2017-07-14</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/h5c3/">h5c3</a>
+    <a class="article-category-link" href="/categories/ajax/">ajax</a>
   </div>
 
   </div>
@@ -82,7 +82,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      H5C3--新的js选择器和css操作方法
+      JSONP的跨域原理
     </h1>
   
 
@@ -90,59 +90,57 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="新的js选择器和css操作方法"><a href="#新的js选择器和css操作方法" class="headerlink" title="新的js选择器和css操作方法"></a>新的js选择器和css操作方法</h2><h3 id="新增的js选择器"><a href="#新增的js选择器" class="headerlink" title="新增的js选择器"></a>新增的js选择器</h3><ul>
-<li>document.QuerySelector();<ul>
-<li>传id <code>#test</code></li>
-<li>传class <code>.text</code></li>
-<li>传tagname <code>.li</code></li>
-<li>返回的是满足条件的第一个元素</li>
-</ul>
-</li>
-<li>document.QuerySelectorAll();<ul>
-<li>传id <code>#test</code></li>
-<li>传class <code>.text</code></li>
-<li>传tagname <code>.li</code></li>
-<li>返回的是满足条件的伪数组，即便只有一个，也可能使用数组</li>
-</ul>
-</li>
-</ul>
-<h3 id="新增的css操作方法"><a href="#新增的css操作方法" class="headerlink" title="新增的css操作方法"></a>新增的css操作方法</h3><ul>
-<li>早期我们要操纵类名 需要使用<ul>
-<li>dom.className = “abc” 来修改 由于返回的是字符串 操作起来并不方便</li>
-<li>$(“body”).addClass</li>
-<li>$(“body”).removeClass</li>
-<li>$(“body”).toggleClass</li>
-<li>$(“body”).hasClass</li>
-</ul>
-</li>
-<li>h5提供的新添加类的方法<ul>
-<li>添加类<ul>
-<li>document.body.classList.add(‘black’);</li>
-</ul>
-</li>
-<li>删除类 <ul>
-<li>document.body.classList.remove(‘black’);</li>
-</ul>
-</li>
-<li>切换类 <ul>
-<li>document.body.classList.toggle(‘black’);</li>
-</ul>
-</li>
-<li>判断是否包括类名<ul>
-<li>document.body.classList.contain(‘black’);</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
+        <p>##JSONP的跨域原理</p>
+<p>实践：a.ajax中将dataType设置为”jsonp”<br> jsonp实现跨域的原理：<br>1-$.ajax 解决跨域时 将dataType设置为 jsonp即可跨域 为哈？</p>
+<p>重要前提：ajax 受到同源策略的限制，不能进行跨域请求，浏览器限制的</p>
+<p>在跨域的情况下，XMLHttpRequest对象 是不能进行跨域请求的</p>
+<p>在跨域的情况下（将dataType设置为 jsonp 时），$.ajax方法并没有使用XMLHttpRequest对象 请求服务器</p>
+<p>而是使用了其他的方式来代替的；</p>
+<p>如何实现：</p>
+<p>原理：</p>
+<p>jsonp本质上是利用了script标签src属性具备跨域的能力和能够直接执行js代码；</p>
+<p>1-客户端要定义好一个函数，通过script标签将函数名传递后台</p>
+<p>2-后台获取函数名，将数据 以函数参数的形式 拼接到函数中</p>
+<p>3-拼接完成后，后台返回 字符串形式的函数调用</p>
+<p>4-浏览器接受到函数调用后，立即执行函数 即可实现功能</p>
+<p>需要前后台互相配合完成；</p>
+<p>备注：script中的代码能够通过js直译器，而不需要通过json解析器<br>*/</p>
+<p>//前端有方法 ，但是缺数据，后台有的就是数据</p>
+<p>//形象的比喻就是前端有枪，但没子弹</p>
+<p>function say(obj){</p>
+<p>alert(‘hello ‘+obj.name);</p>
+<p>}</p>
+<p>下面就是利用script 标签src属性 具备跨域请求资源的能力 ，与后台交互</p>
+<!-- 跨域可以请求图片 -->
+<!-- <img src="http://study.com/test/lz.png"; > -->
+<!-- 跨域能请求js文件 -->
+<!-- <script src="http://study.com/test/test.js"></script>; -->
+<!-- src能跨域请求后台处理程序(php) 并可以返回数据 -->
+<!-- <script src="http://study.com/test/test.php"></script>; -->
+<!-- 能实现前端传递数据给后台，后台在返回数据吗 -->
+<!-- <script src="http://study.com/test/test1.php?name=zs"></script>; -->
+<!-- 服务器返回都是say() 会被浏览器当做 js代码执行 -->
+<!-- <script src="http://study.com/test/test1.php?callback=say"></script> -->
+<!-- 
+其中 jsonCallback 是客户端注册的，获取跨域服务器上的 json 数据后，回调的函数。http://www.site2.com/index.php?callback=jsonpCallback 这个 url 是跨域服务器取 json 数据的接口，参数为回调函数的名字，返回的格式为：jsonpCallback({"name": "dee"})
+
+简述原理与过程：首先在客户端注册一个 callback, 然后把 callback 的名字传给服务器。此时，服务器先生成 json 数据。 然后以 javascript 语法的方式，生成一个function , function 名字就是传递上来的参数 jsonp 。最后将 json 数据直接以入参的方式，放置到 function 中，这样就生成了一段 js 语法的文档，返回给客户端。
+
+客户端浏览器，解析 script 标签，并执行返回的 javascript 文档，此时数据作为参数，传入到了客户端预先定义好的 callback 函数里。（动态执行回调函数）
+ -->
+<p>##其他跨域解决方案</p>
+<p>CORS（跨域资源共享，Cross-Origin Resource Sharing）是 W3 的一项机制（<a href="https://www.w3.org/TR/cors/），跨源资源共享标准通过新增一系列" target="_blank" rel="noopener">https://www.w3.org/TR/cors/），跨源资源共享标准通过新增一系列</a> HTTP 头，让服务器能声明哪些来源可以通过浏览器访问该服务器上的资源。</p>
+<p>例：</p>
+<p>在 site2/cors.php 中添加 header：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">header(<span class="string">'Access-Control-Allow-Origin: *'</span>);</span><br></pre></td></tr></table></figure></p>
+<p>在node中使用<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">response.setHeader(<span class="string">"Access-Control-Allow-Origin"</span>, <span class="string">"*"</span>);</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/12/14-新的JS选择器和css操作/" data-id="cjb0p1el1000w5ouly2fj2nx4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/14/JSONP的跨域原理/" data-id="cjai07wkl0000skulseck6c5b" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/分享/">分享</a></li></ul>
 
     </footer>
   </div>
@@ -150,19 +148,19 @@
     
 <nav id="article-nav">
   
-    <a href="/2017/07/12/03-盒子模型/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/10/03/jQuery源码分析(一)，简单的抽取框架/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          H5C3--css3盒子模型渐变
+          jQuery源码分析(一)，简单的抽取框架
         
       </div>
     </a>
   
   
-    <a href="/2017/07/12/06-背景/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/07/13/09-动画/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">H5C3--背景</div>
+      <div class="article-nav-title">H5C3--动画</div>
     </a>
   
 </nav>

@@ -3,19 +3,14 @@
 <head>
   <meta charset="utf-8">
   
-  <title>H5C3--新的js选择器和css操作方法 | Hexo</title>
+  <title>Tag: 分享 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="新的js选择器和css操作方法新增的js选择器 document.QuerySelector(); 传id #test 传class .text 传tagname .li 返回的是满足条件的第一个元素   document.QuerySelectorAll(); 传id #test 传class .text 传tagn">
-<meta name="keywords" content="笔记">
-<meta property="og:type" content="article">
-<meta property="og:title" content="H5C3--新的js选择器和css操作方法">
-<meta property="og:url" content="http://yoursite.com/2017/07/12/14-新的JS选择器和css操作/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/tags/分享/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="新的js选择器和css操作方法新增的js选择器 document.QuerySelector(); 传id #test 传class .text 传tagname .li 返回的是满足条件的第一个元素   document.QuerySelectorAll(); 传id #test 传class .text 传tagname .li 返回的是满足条件的伪数组，即便只有一个，也可能使用数组    新">
-<meta property="og:updated_time" content="2017-12-10T11:32:21.758Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="H5C3--新的js选择器和css操作方法">
-<meta name="twitter:description" content="新的js选择器和css操作方法新增的js选择器 document.QuerySelector(); 传id #test 传class .text 传tagname .li 返回的是满足条件的第一个元素   document.QuerySelectorAll(); 传id #test 传class .text 传tagname .li 返回的是满足条件的伪数组，即便只有一个，也可能使用数组    新">
+<meta name="twitter:title" content="Hexo">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -64,111 +59,39 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-14-新的JS选择器和css操作" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/07/12/14-新的JS选择器和css操作/" class="article-date">
-  <time datetime="2017-07-12T13:05:13.000Z" itemprop="datePublished">2017-07-12</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/h5c3/">h5c3</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+        <section id="main">
   
-    <h1 class="article-title" itemprop="name">
-      H5C3--新的js选择器和css操作方法
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2017" class="archive-year">2017</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2017/07/14/JSONP的跨域原理/" class="archive-article-date">
+  <time datetime="2017-07-14T13:17:28.000Z" itemprop="datePublished">Jul 14</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/07/14/JSONP的跨域原理/">JSONP的跨域原理</a>
     </h1>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="新的js选择器和css操作方法"><a href="#新的js选择器和css操作方法" class="headerlink" title="新的js选择器和css操作方法"></a>新的js选择器和css操作方法</h2><h3 id="新增的js选择器"><a href="#新增的js选择器" class="headerlink" title="新增的js选择器"></a>新增的js选择器</h3><ul>
-<li>document.QuerySelector();<ul>
-<li>传id <code>#test</code></li>
-<li>传class <code>.text</code></li>
-<li>传tagname <code>.li</code></li>
-<li>返回的是满足条件的第一个元素</li>
-</ul>
-</li>
-<li>document.QuerySelectorAll();<ul>
-<li>传id <code>#test</code></li>
-<li>传class <code>.text</code></li>
-<li>传tagname <code>.li</code></li>
-<li>返回的是满足条件的伪数组，即便只有一个，也可能使用数组</li>
-</ul>
-</li>
-</ul>
-<h3 id="新增的css操作方法"><a href="#新增的css操作方法" class="headerlink" title="新增的css操作方法"></a>新增的css操作方法</h3><ul>
-<li>早期我们要操纵类名 需要使用<ul>
-<li>dom.className = “abc” 来修改 由于返回的是字符串 操作起来并不方便</li>
-<li>$(“body”).addClass</li>
-<li>$(“body”).removeClass</li>
-<li>$(“body”).toggleClass</li>
-<li>$(“body”).hasClass</li>
-</ul>
-</li>
-<li>h5提供的新添加类的方法<ul>
-<li>添加类<ul>
-<li>document.body.classList.add(‘black’);</li>
-</ul>
-</li>
-<li>删除类 <ul>
-<li>document.body.classList.remove(‘black’);</li>
-</ul>
-</li>
-<li>切换类 <ul>
-<li>document.body.classList.toggle(‘black’);</li>
-</ul>
-</li>
-<li>判断是否包括类名<ul>
-<li>document.body.classList.contain(‘black’);</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/12/14-新的JS选择器和css操作/" data-id="cjb0p1el1000w5ouly2fj2nx4" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
-
-    </footer>
+    </header>
   </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2017/07/12/03-盒子模型/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          H5C3--css3盒子模型渐变
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2017/07/12/06-背景/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">H5C3--背景</div>
-    </a>
-  
-</nav>
-
-  
 </article>
+  
+  
+    </div></section>
+  
 
 </section>
         
